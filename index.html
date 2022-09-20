@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Road</title>
+    <style type="text/css">
+        body,h1,h3{margin: 0; text-align: center; }
+        h1{display: block; background-color:none; width: 230px; height: 50px; 
+            border: 2px solid darkblue; border-radius: 25px; margin-top: 10px; text-align: center; line-height: 45px;
+            margin-left: auto; margin-right: auto;}
+    h2{font-size: 20px; font-weight: lighter;}
+h3{font-size: 50px; color: white; padding-top: 20px;;}
+        .ani{width: vw; height: 700px;
+            background: skyblue url(bg.png);
+            background-size: 2200px auto; 
+            background-position: 0 0px;
+            animation: shift 5s infinite linear;}
+        @keyframes shift{
+            form{background-position: 0 0;}
+            to{background-position:-2200px 0;} 
+        }
+        .car{display: block; margin-left: auto; margin-right: auto; padding-top: 500px;}
+
+
+
+        #c1{display: flex; margin: auto;margin-top: 10px;}
+        #m1{font-size: 20px; color: gray; font-weight: bold; text-align: center;}
+        #control{display: block; margin: auto;margin-top: 10px;}
+
+        
+        
+    </style>
+</head>
+
+<body>
+    <div id="left" class="ani">
+        <div id="src">
+            <h3>Click the car!</h3>
+            <img src="redcar.png" class="car" id="img1">
+        </div>
+        
+    </div>
+<h1>Hurry UP!!</h1>
+    <input type="range" id="control" step="0.1" min="0.5" max="10" value="5">
+
+
+    <div class="sky" id="bg1">
+        <h2>change the sky color</h2>
+       <input type="color" id="c1">
+       <div id="m1"></div> 
+    </div>
+
+    <script type="text/javascript">
+        control.oninput=function(){
+            left.style.animationDuration=control.value + "s";
+        }
+
+        c1.oninput = function(){
+            m1.innerHTML = c1.value;
+            left.style.background = c1.value;
+        }
+makeBox();
+
+    function makeBox(){
+        img1.onclick = function(){
+            var a = document.getElementById("img1")
+            var b = Math. random()*window.innerWidth;
+            a.style.left=b+"px";
+            a.parentNode.removeChild(a);
+        }
+            document.body.appendChild(a);
+        
+         
+
+    }
+
+        
+
+</script>
+</body>
+</html>
